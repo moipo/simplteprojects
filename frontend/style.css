@@ -1,0 +1,29 @@
+#buttoncreatetask{
+  margin: 50px;
+  margin-top: 50px;
+  width: 40px;
+  height: 40px;
+  color: red
+}
+
+
+#userinputstring{
+  margin: 50px;
+  margin-left: 30%;
+  width: 800px;
+  height: 40px;
+  font-size: 25px;
+}
+
+body{
+  background: #489196;
+}
+
+
+.task{
+  font-size: 25px;
+  text-align : center;
+  margin-left: 30%;
+  border: 3px solid orange;
+  width: 800px;
+}
