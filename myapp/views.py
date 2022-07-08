@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from .forms import UserInputForm
+from .forms import UserInputForm # чтобы отобразить форму
+from .models import UserInput #для написания запросов к БД
 #from .models import Unnes
 
 #from .forms import UnnesForm
@@ -43,7 +44,21 @@ def show_form(request, *args, **kwargs):
     if form.is_valid():
         form.save()
 
+
+
+    allthedata = UserInput.objects.all()
+    howmanyobjects = len(allthedata)
+    #object = UserInput.objects.get(id = len(allthe))
+    textforans = allthedata[len(allthedata)-1].sometext
+    counter = 1
+    for i in textforans:
+        if ' ' == i:
+            counter+=1
+
     context = {
-        'form' : form
+        'form' : form,    #передаем объект, который потом и используется в html как form.as_p
+        'allthedata' : allthedata,
+        'howmanyobjects': howmanyobjects,
+        'counter' : counter,
     }
     return render(request,"base.html", context)

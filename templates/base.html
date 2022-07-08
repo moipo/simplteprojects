@@ -10,11 +10,13 @@
 
 
     <h1 id = "header1">Counter</h1>
-    <button id = "thatbutton" type="button">Click Me! </button> <br>
-    <form id="textinput" method="POST"> {% csrf_token %}
+    <div id="textinput">
+    <form  method="POST"> {% csrf_token %}
     {{form.as_p}}
     <input  type = 'submit' , value = "Save" />
     </form>
-    <div id = "answer"> answer below: </div>
+    </div>
+    <div id = "answer"> answer : </div> <br>
+    <h1><div id = "counter">{{counter}}</div></h1>
   </body>
 </html>
