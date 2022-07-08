@@ -11,9 +11,9 @@
 
     <h1 id = "header1">Counter</h1>
     <button id = "thatbutton" type="button">Click Me! </button> <br>
-    <form method="POST"> {% csrf_token %}
+    <form id="textinput" method="POST"> {% csrf_token %}
     {{form.as_p}}
-    <input type = 'submit' , value = "Save" />
+    <input  type = 'submit' , value = "Save" />
     </form>
     <div id = "answer"> answer below: </div>
   </body>

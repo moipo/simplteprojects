@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import UserInput
+from .forms import UserInputForm
 #from .models import Unnes
 
 #from .forms import UnnesForm
@@ -39,7 +39,7 @@ def extend(request, *args, **kwargs):
     return render(request, 'additionalhtml.html')
 '''
 def show_form(request, *args, **kwargs):
-    form = UserInput(request.POST or None)
+    form = UserInputForm(request.POST or None)
     if form.is_valid():
         form.save()
 

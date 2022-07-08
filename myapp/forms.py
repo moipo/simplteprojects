@@ -16,5 +16,5 @@ class UserInputForm(forms.ModelForm):
     class Meta:
         model = UserInput
         fields = [
-        'sometxt',
+        'sometext',
         ]
