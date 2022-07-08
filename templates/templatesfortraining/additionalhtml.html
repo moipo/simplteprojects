@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    {% block title %}
+    <title>Title was changed</title>
+    {% endblock %}
+  </head>
+  <body>
+
+
+    {% block lol %}
+    <h1><a href="http://127.0.0.1:8000/"> What i replaced it with<a><h1>
+    {% endblock lol %}
+
+    {% block change %}
+    <h1><a href="http://127.0.0.1:8000/"> What i replaced it with<a><h1>
+    {% endblock change %}
+
+  </body>
+</html>

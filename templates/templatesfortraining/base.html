@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel = "stylesheet" href="{% static 'myapp/css/style1.css' %}">
+    {% block title %}
+    <title>Counter</title>
+    {% endblock %}
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1><a href ="http://127.0.0.1:8000/checkmyform/"> Ckick me<a><h1>  
+    {% for item in allthedata %}
+    {{item.title}}   {{item.description}}    {{item.additional_descrition}}      {{item.price}} <br>
+    {%endfor%}
+    <ol>
+      {% for item in allthedata %}
+        <li>{{item}}</li>
+      {% endfor %}
+    </ol>
+    <a href="http://127.0.0.1:8000/wtf/"> link </a> <br><br>
+    {% block lol %}
+    <a href="http://127.0.0.1:8000/extend/"> word <a>
+    {% endblock lol%}
+
+    {% block change %}
+    <a href="http://127.0.0.1:8000/extend/"> word <a>
+    {% endblock change%}
+
+
+    <h1 id = "header1">Счётчик символов и слов</h1>
+    <button id = "thatbutton" type="button">Click Me! </button> <br>
+    <textarea id = "lotsoftext" name="dataforserver" rows="15" cols="120" placeholder="Вставьте текст"></textarea>
+    <div id = "answer"> answer </div>
+  </body>
+</html>
