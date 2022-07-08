@@ -1,4 +1,8 @@
-{% extends base.html %}
-{% block getdb %}
+{% extends "base.html" %}
 
+{% block getdb %}
+<div class = "option"><h4><a href="http://127.0.0.1:8000/">don't show 10 previous results</a></h4><br></div>
+{% for item in lasttencount %}
+  {{item}}<br>
+{% endfor %}
 {% endblock %}

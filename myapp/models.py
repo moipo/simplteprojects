@@ -10,4 +10,4 @@ class Unnes(models.Model): #класс MODEL определен в классе 
 '''
 
 class UserInput(models.Model):
-    sometext = models.TextField(default = "simple title")
+    sometext = models.TextField(default = "")

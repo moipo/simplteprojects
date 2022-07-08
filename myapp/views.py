@@ -62,3 +62,38 @@ def show_form(request, *args, **kwargs):
         'counter' : counter,
     }
     return render(request,"base.html", context)
+
+
+
+
+
+def showten(request, *args, **kwargs):
+    form = UserInputForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+
+
+
+    allthedata = UserInput.objects.all()
+    howmanyobjects = len(allthedata)
+    #object = UserInput.objects.get(id = len(allthe))
+    textforans = allthedata[len(allthedata)-1].sometext
+    counter = 1
+    for i in textforans:
+        if (' ' == i) or ('\n' == i):
+            counter+=1
+
+    lastten = allthedata[len(allthedata)-11:len(allthedata)-1] #?
+    lasttencount = []
+    for item in lastten:
+        lasttencount += [(item.sometext.count(" ") + item.sometext.count("\n")) + 1]
+
+    lasttencount.reverse()
+    context = {
+        'form' : form,    #передаем объект, который потом и используется в html как form.as_p
+        'allthedata' : allthedata,
+        'howmanyobjects': howmanyobjects,
+        'counter' : counter,
+        'lasttencount' : lasttencount,
+    }
+    return render(request,"extension.html", context)

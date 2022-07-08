@@ -2,7 +2,8 @@ from django.urls import path #для использования urlpatters, в �
 from . import views #чтобы мочь связывать url с нашими представлениями приложения
 
 urlpatterns = [
-    path('', views.show_form, name = "show") ,
+    path('', views.show_form, name = "s") ,
+    path('showten', views.showten, name = "show") ,
 ]
 
 '''
